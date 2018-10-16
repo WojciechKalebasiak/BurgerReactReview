@@ -1,0 +1,15 @@
+.confirmButton {
+    background-color: #058e07;
+    padding: 10px;
+    color: white;
+    border: none;
+}
+
+.closeModalButton {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 2em
+}

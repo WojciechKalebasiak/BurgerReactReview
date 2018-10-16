@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "./Modal.module.css";
+import Button from "../Button/Button";
 export default function ModalFooter(props) {
   return (
     <div className={styles.ModalFooter}>
-      <button onClick={props.confirm} className={styles.confirmButton}>Confirm</button>
+      <Button
+        clicked={props.confirm}
+        buttonType="confirmButton"
+        style={{ marginLeft: "80%" }}>
+        Confirm
+      </Button>
     </div>
   );
 }

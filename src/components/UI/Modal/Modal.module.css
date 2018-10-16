@@ -1,6 +1,6 @@
 .Modal {
     position: fixed;
-    z-index: 1;
+    z-index: 500;
     left: 25%;
     top: 50px;
     width: 50%;
@@ -26,23 +26,6 @@
 .ModalFooter {
     padding-top: 15px;
     padding-bottom: 15px;
-}
-
-.closeButton {
-    position: absolute;
-    top: 0;
-    right: 5px;
-    background-color: transparent;
-    border: none;
-    font-size: 2em
-}
-
-.confirmButton {
-    margin-left: 80%;
-    background-color: #058e07;
-    padding: 10px;
-    color: white;
-    border: none;
 }
 
 .summaryList {
