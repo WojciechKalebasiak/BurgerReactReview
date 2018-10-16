@@ -1,3 +1,35 @@
 .ingredient {
+    margin: 0 auto;
     margin-top: 15px;
+    max-width: 300px;
+}
+
+.delete {
+    display: none;
+}
+
+.ingredient:hover img {
+    padding: 20px;
+    border: 1px solid #f44265;
+}
+
+.ingredient:hover .delete {
+    margin-top: 10px;
+    display: block;
+    color: #f44265;
+    cursor: pointer;
+}
+
+@media(min-width:700px) {
+    .ingredient:hover img {
+        padding: 20px;
+        border: 2px solid #f44265;
+        box-shadow: 2px 0 2px 3px #f44265;
+    }
+
+    .ingredient:hover .delete {
+        display: block;
+        color: #f44265;
+        cursor: pointer;
+    }
 }

@@ -8,8 +8,6 @@ import Pepper from "./components/Pepper";
 import Onion from "./components/Onion";
 import Tomato from "./components/Tomato";
 import Salat from "./components/Salat";
-import BurgerTop from './components/BurgerTop';
-import BurgerBottom from './components/BurgerBottom';
 const burgerIngredient = props => {
   let ingredient = null;
 
@@ -37,16 +35,15 @@ const burgerIngredient = props => {
     case "tomato":
       ingredient = <Tomato />;
       break;
-      case "burgertop":
-      ingredient = <BurgerTop/>
-      break;
-      case "burgerbottom":
-      ingredient = <BurgerBottom/>
-      break;
     default:
       ingredient = null;
   }
-  return <div className={styles.ingredient}>{ingredient}</div>;
+  return (
+    <div className={styles.ingredient} onClick={props.delete}>
+      {ingredient}
+      <p className={styles.delete}>Click to delete</p>
+    </div>
+  );
 };
 burgerIngredient.propTypes = {
   type: PropTypes.string.isRequired
