@@ -12,6 +12,7 @@
     flex-direction: column;
     box-shadow: 2px 3px 3px 2px;
 }
+
 .ModalHeader,
 .ModalFooter {
     background-color: #f2e14b;
@@ -27,21 +28,6 @@
     padding-top: 15px;
     padding-bottom: 15px;
 }
-
-.summaryList {
-    text-align: left;
-    margin-left: 20px;
-    margin-bottom: auto;
-}
-
-.summaryList h3 {
-    font-size: 2.5em;
-}
-
-.summaryList li {
-    font-size: 2em;
-}
-
 .IngIcon {
     margin-left: 15px;
 }
@@ -58,4 +44,3 @@
         margin-top: auto;
     }
 }
-

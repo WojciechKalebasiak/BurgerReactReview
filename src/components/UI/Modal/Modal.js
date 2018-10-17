@@ -11,7 +11,7 @@ export default function Modal(props) {
       <Backdrop hideModal={props.hide}/>
       <div className={styles.Modal}>
         <ModalHeader hide={props.hide} />
-        <SummaryList ingredients={props.ingredients} />
+        <SummaryList ingredients={props.ingredients} price={props.price} />
         <ModalFooter confirm={props.confirm} />
       </div>
     </Aux>

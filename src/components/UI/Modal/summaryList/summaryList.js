@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Modal.module.css";
+import styles from "./summaryList.module.css";
 import SummaryListItem from "./summaryListItem";
 
 export default function summaryList(props) {
@@ -11,6 +11,10 @@ export default function summaryList(props) {
           <SummaryListItem item={ing} key={ing.key} />
         ))}
       </ul>
+      <h2>
+        Total Price:
+        <span> {props.price}&#36;</span>
+      </h2>
     </div>
   );
 }
