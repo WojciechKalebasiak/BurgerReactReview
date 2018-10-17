@@ -20,7 +20,7 @@ class BurgerBuilder extends Component {
       price: 2,
       purchaseble: false,
       showSummary: false,
-      confirmed: false
+      confirmed: false,
     };
   }
   hideModal = () => {

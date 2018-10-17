@@ -8,7 +8,7 @@ import Backdrop from "../Backdrop/Backdrop";
 export default function Modal(props) {
   return (
     <Aux>
-      <Backdrop hideModal={props.hide}/>
+      <Backdrop hide={props.hide} show={props.show}/>
       <div className={styles.Modal}>
         <ModalHeader hide={props.hide} />
         <SummaryList ingredients={props.ingredients} price={props.price} />

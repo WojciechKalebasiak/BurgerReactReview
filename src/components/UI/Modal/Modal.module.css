@@ -31,16 +31,21 @@
 .IngIcon {
     margin-left: 15px;
 }
-
+.confirmButton {
+    margin-left: 80%;
+}
 @media (max-width:700px) {
     .Modal {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
     }
 
     .ModalFooter {
         margin-top: auto;
+    }
+    .confirmButton { 
+        margin-left: 65%;
     }
 }

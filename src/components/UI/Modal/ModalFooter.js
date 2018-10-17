@@ -6,8 +6,7 @@ export default function ModalFooter(props) {
     <div className={styles.ModalFooter}>
       <Button
         clicked={props.confirm}
-        buttonType="confirmButton"
-        style={{ marginLeft: "80%" }}>
+        buttonType="confirmButton">
         Confirm
       </Button>
     </div>

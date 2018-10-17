@@ -4,13 +4,19 @@
     max-width: 300px;
 }
 
-.delete {
-    display: none;
+.ingredient:hover img {
+    padding: 20px;
+    border: 2px solid #f44265;
+    box-shadow: 2px 0 2px 3px #f44265;
 }
 
 .ingredient:hover img {
     padding: 20px;
     border: 1px solid #f44265;
+}
+
+.delete {
+    display: none;
 }
 
 .ingredient:hover .delete {
@@ -20,16 +26,18 @@
     cursor: pointer;
 }
 
-@media(min-width:700px) {
-    .ingredient:hover img {
-        padding: 20px;
-        border: 2px solid #f44265;
-        box-shadow: 2px 0 2px 3px #f44265;
+@media(max-width:500px) {
+    .delete {
+        display: none;
     }
 
     .ingredient:hover .delete {
-        display: block;
-        color: #f44265;
-        cursor: pointer;
+        display: none;
+    }
+
+    .ingredient:hover img {
+        padding: 0px;
+        border: none;
+        box-shadow: none;
     }
 }

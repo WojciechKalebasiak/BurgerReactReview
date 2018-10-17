@@ -13,3 +13,17 @@
     color: black;
     box-sizing: border-box;
 }
+.Toolbar nav {
+    height: 100%;
+}
+.Hamburger {
+    display: none;
+}
+@media(max-width:500px) {
+    .Toolbar nav {
+        display: none;
+    }
+    .Hamburger {
+        display: inline-block;
+    }
+}

@@ -22,4 +22,7 @@
     .summaryList h4 {
         margin-top: auto;
     }
+    .summaryList {
+        font-size: 8px;
+    }
 }

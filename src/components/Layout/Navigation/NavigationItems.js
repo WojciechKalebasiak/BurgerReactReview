@@ -4,7 +4,7 @@ import NavigationItem from "./NavigationItem.js/NavigationItem";
 export default function NavigationItems() {
   return (
     <ul className={styles.NavigationItems}>
-      <NavigationItem link="/">Burger Builder</NavigationItem>
+      <NavigationItem link="/" active>Burger Builder</NavigationItem>
       <NavigationItem link="/">Other Path</NavigationItem>
     </ul>
   );
