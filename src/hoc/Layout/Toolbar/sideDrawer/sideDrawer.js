@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import logo from "../../assets/burger.png";
 import NavigationItems from "../../Navigation/NavigationItems";
 import styles from "./sideDrawer.module.css";
-import Backdrop from "../../../UI/Backdrop/Backdrop";
+import Backdrop from '../../../../components/UI/Backdrop/Backdrop'
 import Aux from "../../../../hoc/Auxiliary";
 export default function sideDrawer(props) {
   return (
