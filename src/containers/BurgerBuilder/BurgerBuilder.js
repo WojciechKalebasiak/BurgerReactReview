@@ -3,6 +3,7 @@ import Aux from "../../hoc/Auxiliary.js";
 import Burger from "../../components/Burger/Burger.js";
 import BuildControls from "../../components/Burger/buildControls/buildControls";
 import Modal from "../../components/UI/Modal/Modal.js";
+import axios from "../../axios-order";
 const INGREDIENT_PRICES = {
   meat: 1.2,
   onion: 0.4,
@@ -20,7 +21,7 @@ class BurgerBuilder extends Component {
       price: 2,
       purchaseble: false,
       showSummary: false,
-      confirmed: false,
+      loading: false
     };
   }
   hideModal = () => {
@@ -42,6 +43,29 @@ class BurgerBuilder extends Component {
         amount: ingObject[element]
       };
     });
+  };
+  handlePurchase = () => {
+    this.setState({ loading: true });
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.price.toFixed(2),
+      customer: {
+        name: "Wojciech Kalebasiak",
+        address: {
+          street: "Wichrowe Wzgorze",
+          zipCode: "61675",
+          email: "w.kalebasiak@puszkin.eu"
+        }
+      }
+    };
+    axios
+      .post("/orders.json", order)
+      .then(res => {
+        this.setState({ loading: false, showSummary: false });
+      })
+      .catch(err => {
+        this.setState({ loading: false, showSummary: false });
+      });
   };
   showSummary = () => {
     this.setState({ showSummary: true });
@@ -90,7 +114,8 @@ class BurgerBuilder extends Component {
             ingredients={this.countIngredients()}
             price={this.state.price.toFixed(2)}
             show={this.state.showSummary}
-            confirm={() => this.setState({ confirmed: true })}
+            purchase={this.handlePurchase}
+            loading={this.state.loading}
           />
         ) : null}
         <Burger
