@@ -4,17 +4,15 @@ import Button from "../Button/Button";
 export default function ModalFooter(props) {
   return (
     <div className={styles.ModalFooter}>
-    <Button
-        clicked={props.hide}
+      <Button
+        clicked={props.cancel}
         buttonType="cancelButton"
-        style={{marginRight:'5px'}}>
+        style={{ marginRight: "5px" }}>
         Cancel
       </Button>
-      <Button
-        clicked={props.purchase}
-        buttonType="confirmButton">
-        Confirm
-      </Button>
+        <Button clicked={props.purchase} buttonType="confirmButton">
+          Confirm
+        </Button>
     </div>
   );
 }

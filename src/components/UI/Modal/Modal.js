@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 import ModalHeader from "./ModalHeader";
 import styles from "./Modal.module.css";
 import ModalFooter from "./ModalFooter";
@@ -6,6 +7,7 @@ import SummaryList from "./summaryList/summaryList";
 import Aux from "../../../hoc/Auxiliary";
 import Backdrop from "../Backdrop/Backdrop";
 import Spinner from "../Spinner/Spinner";
+import ContactData from "../../../containers/ContactData/ContactData";
 class Modal extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return (
@@ -22,12 +24,30 @@ class Modal extends Component {
           {this.props.loading ? (
             <Spinner />
           ) : (
-            <SummaryList
-              ingredients={this.props.ingredients}
-              price={this.props.price}
-            />
+            <Switch>
+              <Route
+                path="/summary"
+                render={props => (
+                  <SummaryList
+                    ingredients={this.props.ingredients}
+                    price={this.props.price}
+                    {...props}
+                  />
+                )}
+              />
+              <Route path="/contact-data" render={() => <ContactData />} />
+            </Switch>
           )}
-          <ModalFooter purchase={this.props.purchase} hide={this.props.hide} />
+          <Route
+            exact
+            path="/summary"
+            render={() => (
+              <ModalFooter
+                purchase={this.props.purchase}
+                cancel={this.props.hide}
+              />
+            )}
+          />
         </div>
       </Aux>
     );

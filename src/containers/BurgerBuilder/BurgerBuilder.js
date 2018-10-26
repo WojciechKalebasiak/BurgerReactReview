@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import Aux from "../../hoc/Auxiliary.js";
 import Burger from "../../components/Burger/Burger.js";
 import BuildControls from "../../components/Burger/buildControls/buildControls";
@@ -61,11 +62,12 @@ class BurgerBuilder extends Component {
     axios
       .post("/orders.json", order)
       .then(res => {
-        this.setState({ loading: false, showSummary: false });
+        this.setState({ loading: false, showSummary: true});
       })
       .catch(err => {
-        this.setState({ loading: false, showSummary: false });
+        this.setState({ loading: false, showSummary: true });
       });
+    this.props.history.replace("/contact-data");
   };
   showSummary = () => {
     this.setState({ showSummary: true });
@@ -132,4 +134,4 @@ class BurgerBuilder extends Component {
     );
   }
 }
-export default BurgerBuilder;
+export default withRouter(BurgerBuilder);
